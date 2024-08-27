@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management'
+    id("io.freefair.lombok") version "8.0.1" //이렇게 작성안해도 되고, 기존에 롬복 버전을 추가하면 됨
+}
+
+group = 'org.delivery'
+version = '1.0-SNAPSHOT'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar{
+    enabled=true
+}
